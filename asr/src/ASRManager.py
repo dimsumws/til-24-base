@@ -8,5 +8,6 @@ class ASRManager:
 
     def transcribe(self, audio_bytes: bytes) -> str:
         # perform ASR transcription
-        result = self.model.transcribe('data/audio.wav', fp16 = False)
-        return result['text']
+        result = self.model.transcribe(bytes)
+        #return result['text']
+        return "test"

@@ -10,6 +10,6 @@ class ASRManager:
         # perform ASR transcription
         audio = open("temp.wav", "wb")
         audio.write(audio_bytes)
-        result = self.model.transcribe(audio)
+        result = self.model.transcribe("temp.wav")
         return result['text']
         #return "test"

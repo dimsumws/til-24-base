@@ -19,6 +19,7 @@ WORKDIR /workspace
 # install other requirements
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN apt-get install -y ffmpeg
 
 # copy the rest of the files into the container
 COPY src .

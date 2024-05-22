@@ -3,11 +3,13 @@ import whisper
 class ASRManager:
     def __init__(self):
         # initialize the model here
-        model = whisper.load_model("base")
+        self.model = whisper.load_model("base")
         pass
 
     def transcribe(self, audio_bytes: bytes) -> str:
         # perform ASR transcription
-        result = self.model.transcribe(bytes)
-        #return result['text']
-        return "test"
+        audio = open("temp.wav", "wb")
+        audio.write(audio_bytes)
+        result = self.model.transcribe(audio)
+        return result['text']
+        #return "test"

@@ -5,3 +5,5 @@ accelerate
 uvicorn[standard]
 pandas==2.0.3
 openai-whisper
+librosa
+noisereduce

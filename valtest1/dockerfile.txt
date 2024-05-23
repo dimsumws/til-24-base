@@ -1,0 +1,14 @@
+create docker in vlm folder
+docker build -t logic-labs-vlm .
+
+allocate docker to port in vlm folder
+docker run -p 5001:5001 --gpus all -d logic-labs-vlm
+
+run python file
+python test_vlm.py
+
+kill docker
+docker kill [id]
+
+remove all containers
+docker rm -v -f $(docker ps -qa)

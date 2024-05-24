@@ -6,8 +6,9 @@ import json
 
 class NLPManager:
     def __init__(self):
-        self.tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-        self.model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+        output_dir = './nlp_training/nlpModel1'
+        self.model = BertForQuestionAnswering.from_pretrained(output_dir)
+        self.tokenizer = BertTokenizer.from_pretrained(output_dir)
 
     def qa(self, context: str) -> Dict[str, str]:
         # Define the questions

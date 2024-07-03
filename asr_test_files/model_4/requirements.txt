@@ -4,5 +4,6 @@ fastapi
 accelerate
 uvicorn[standard]
 pandas==2.0.3
-datasets
-transformers
+openai-whisper
+librosa
+noisereduce

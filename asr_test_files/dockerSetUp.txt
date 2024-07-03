@@ -1,0 +1,14 @@
+create docker in asr folder
+docker build -t logic-labs-asr .
+
+allocate docker to port in asr folder
+docker run -p 5001:5001 --gpus all -d logic-labs-asr
+
+run python file
+python test_asr.py
+
+kill docker
+docker kill [id]
+
+remove all containers
+docker rm -v -f $(docker ps -qa)
